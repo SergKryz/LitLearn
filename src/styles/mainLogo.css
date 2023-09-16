@@ -1,0 +1,53 @@
+.main-logo {
+    width: 376px;
+    text-align: center;
+    margin: 100px auto 0 auto ;
+  }
+  .main-logo .overlap-group {
+    height: 114px;
+    position: relative;
+    top: -2px;
+  }
+  
+  .main-logo .rectangle {
+    border: 1.5px solid;
+    border-color: #ffffff;
+    height: 69px;
+    left: 170px;
+    position: absolute;
+    top: 33px;
+    width: 194px;
+  }
+  
+  .main-logo .div {
+    background-color: #00000029;
+    border: 1.5px solid;
+    border-color: #ffffff;
+    height: 102px;
+    left: 0;
+    position: absolute;
+    top: 9px;
+    width: 376px;
+  }
+  
+  .main-logo .lit-learn {
+    color: #ffffff;
+    font-family: "Inter-Bold", Helvetica;
+    font-size: 94.5px;
+    font-weight: 400;
+    left: 8px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 0;
+  }
+  
+  .main-logo .text-wrapper {
+    font-weight: 700;
+  }
+  
+  .main-logo .span {
+    font-family: "Inter-ExtraLight", Helvetica;
+    font-weight: 200;
+  }

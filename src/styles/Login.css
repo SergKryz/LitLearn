@@ -1,0 +1,134 @@
+   
+
+    
+
+
+body {
+    margin: 0;
+    padding: auto;
+    background-image: url('../assets/background/Senamiestis.jpg');
+    background-position: center;
+    background-size: cover;
+    
+    height: 100vh;
+  }
+
+  .main-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin:center;
+  }
+  
+  /* Center the login card */
+  .login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:0 auto;
+  }
+  
+  /* Style the login card */
+  .login-card {
+    background: rgba(133, 128, 128, 0.5);
+    padding: 2em;
+    border-radius: 22px;
+    box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    text-align: center;
+    
+  }
+  
+  .card-body {
+    padding: 1em;
+  }
+  
+  .alert {
+    color: red;
+  }
+  .email-input,
+.password-input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 22px;
+  background-color: rgba(255, 255, 255, 0.6);;
+  text-align: center;
+}
+  /* Styling the login button */
+  .login-button {
+    background-color: #FFFFFF;
+  
+    color: rgb(44, 42, 42);
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;    
+       
+    font-size: 16px;
+    margin: 10px;
+    pad: 10px;
+    cursor: pointer;
+    border-radius: 38px;
+    width: fit-content;
+  }
+
+    .LT-gradient{
+        
+        background:linear-gradient(to right, yellow 0%, yellow 33%, rgb(101, 222, 101) 33%,rgb(101, 222, 101) 66%, red 66%, red 100%);
+        -webkit-background-clip: text;
+        color: transparent;
+
+       
+    }
+    
+   .Logo-links{
+    text-decoration: none;
+    color: rgb(44, 42, 42);
+    font-size: 16px;
+    margin: 15px;
+    
+    cursor: pointer;
+    border-radius: 38px;
+    width: fit-content;
+   }
+ 
+  button.btn-reg{
+    text-decoration: none;
+    color: rgb(247, 238, 238);
+    font-size: 16px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 38px;
+    width: fit-content;
+    padding: 0px 20px;
+    background-color: transparent;
+    border: #FFFFFF solid 2px;
+    font-size: 12PX;
+
+  }
+
+  .link a {
+    
+  
+    color: rgb(131, 206, 240);
+  }
+
+  .icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+  }
+.mx-2 {
+    margin: 1.5rem;
+}
+
+.form-title {
+    text-align: center;
+    font-size: 45px;
+    font-weight: bold;
+    color: rgb(243, 241, 241);
+    margin-bottom: 20px;  
+}
