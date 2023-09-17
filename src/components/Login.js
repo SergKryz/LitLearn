@@ -22,7 +22,13 @@ export default function Login() {
       setError("");
       setLoading(true);
       await login(emailRef.current.value, passwordRef.current.value);
-      navigate("/");
+
+      //if email is admins , redirect to admin page
+      if (emailRef.current.value === "admin@admin.com") {
+        navigate("/admin");
+      } else {
+        navigate("/");
+      }
     } catch {
       setError("Failed to log in");
     }
@@ -30,7 +36,7 @@ export default function Login() {
   }
 
   return (
-    <div className="main-wrapper">
+    <div className="main">
       <MainLogo />
       <div className="login-container">
         <div className="login-card">
@@ -62,9 +68,9 @@ export default function Login() {
               </button>
               <br />
               <div className="btn-not-reg">
-                <button className="btn-reg" to="/signup">
+                <Link className="btn-reg" to="/signup">
                   Not registered yet?
-                </button>
+                </Link>
               </div>
             </form>
             <div className="LT-gradient">Or sign in with other accounts</div>

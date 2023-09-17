@@ -1,62 +1,98 @@
-import React, { useRef, useState } from "react";
-import { Card, Form, Button, Alert } from "react-bootstrap";
-import { useAuth } from "../contexts/AuthContext";
+import React, { useState } from "react";
+import { auth } from "../firebase";
+import "../styles/Login.css";
+import MainLogo from "./mainLogo";
+import fbIcon from "../assets/icons/fb.png";
+import twitterIcon from "../assets/icons/twitter.png";
+import googleIcon from "../assets/icons/google.png";
 import { Link, useNavigate } from "react-router-dom";
 
-export default function Signup() {
-  const emailRef = useRef();
-  const passwordRef = useRef();
-  const passwordConfirmRef = useRef();
-  const { signup } = useAuth();
-  const [error, setError] = useState("");
-  const [loading, setLoading] = useState(false);
+const SignUp = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const navigate = useNavigate();
 
-  async function handleSubmit(e) {
-    e.preventDefault();
-
-    if (passwordRef.current.value !== passwordConfirmRef.current.value) {
-      return setError("Passwords do not match");
+  const handleSignUp = async () => {
+    if (password === confirmPassword && email && password) {
+      try {
+        await auth.createUserWithEmailAndPassword(email, password);
+        alert("User registered successfully");
+        navigate("/login");
+      } catch (error) {
+        alert(error.message);
+      }
+    } else {
+      alert("Please ensure that all fields are filled and passwords match");
     }
-    try {
-      setError("");
-      setLoading(true);
-      await signup(emailRef.current.value, passwordRef.current.value);
-      navigate("/");
-    } catch {
-      setError("Failed to create an account");
-    }
-    setLoading(false);
-  }
+  };
 
   return (
-    <>
-      <Card>
-        <Card.Body>
-          {error && <Alert variant="danger">{error}</Alert>}
-          <h2 className="text-center mb-4">Sign Up</h2>
-          <Form onSubmit={handleSubmit}>
-            <Form.Group id="email">
-              <Form.Label>Email</Form.Label>
-              <Form.Control type="email" ref={emailRef} required />
-            </Form.Group>
-            <Form.Group id="password">
-              <Form.Label>Password</Form.Label>
-              <Form.Control type="password" ref={passwordRef} required />
-            </Form.Group>
-            <Form.Group id="password-confirm">
-              <Form.Label>Confirm password</Form.Label>
-              <Form.Control type="password" ref={passwordConfirmRef} required />
-            </Form.Group>
-            <Button disabled={loading} className="w-100" type="submit">
-              Sign Up
-            </Button>
-          </Form>
-        </Card.Body>
-      </Card>
-      <div className="w-100 text-center mt-2">
-        Already have an account? <Link to="/login">Log in</Link>
+    <div className="main">
+      <MainLogo />
+      <div className="login-container">
+        {" "}
+        <div className="login-card">
+          <span className="form-title">Register</span>
+          <input
+            type="email"
+            placeholder="Email"
+            onChange={(e) => setEmail(e.target.value)}
+            className="email-input"
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            onChange={(e) => setPassword(e.target.value)}
+            className="password-input"
+          />
+          <input
+            type="password"
+            className="password-input"
+            placeholder="Confirm Password"
+            onChange={(e) => setConfirmPassword(e.target.value)}
+          />
+          <button onClick={handleSignUp} className="login-button">
+            Register
+          </button>
+          <div className="btn-not-reg">
+            <Link className="btn-reg" to="/login">
+              Back
+            </Link>
+            <div className="LT-gradient">Or sign in with other accounts</div>
+            <div className="icon-container">
+              <img
+                className="mx-2"
+                src={fbIcon}
+                alt="Facebook icon"
+                width="40"
+                height="40"
+              />
+              <img
+                className="mx-2"
+                src={googleIcon}
+                alt="Google icon"
+                width="40"
+                height="40"
+              />
+              <img
+                className="mx-2"
+                src={twitterIcon}
+                alt="Twitter icon"
+                width="40"
+                height="40"
+                border
+                radius="50%"
+              />
+            </div>
+            <div className="link forgot">
+              <Link to="/forgot-password">Forgot password?</Link>
+            </div>
+          </div>
+        </div>
       </div>
-    </>
+    </div>
   );
-}
+};
+
+export default SignUp;

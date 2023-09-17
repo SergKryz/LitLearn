@@ -1,0 +1,101 @@
+.admin-container {
+    margin: 20px;
+    
+  }
+
+.admin-title-container h1{
+    text-align: center;
+    color: rgb(251, 251, 251);
+    background-color: aliceblue;
+    display: flex; 
+    justify-content: center; 
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px;  
+    color: white;
+    background-color: rgba(210, 184, 184, 0.8);
+  }
+  
+  .admin-card {
+    margin: 10px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    background-color: seashell;
+  }
+  
+  .admin-button {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 12px;
+    background-color: #00ffcc;
+    color: rgb(20, 19, 19);
+    cursor: pointer;
+  }
+  
+  .admin-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .admin-input {
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+  }
+  
+  
+  .lesson-card:hover .card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  
+  .card-front span, .card-back span {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  
+  .edit-lesson-section {
+    margin-top: 30px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    background-color: #dbd3d3;
+  }
+  
+  .edit-lesson-section h2 {
+    margin-bottom: 20px;
+  }
+  
+  .edit-lesson-section ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+
+  .word-list-section {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+  }
+  
+  .word-list-section h2 {
+    margin-bottom: 20px;
+  }
+  
+  .word-list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+  }
+  
+  .word-list-item button {
+    padding: 5px 10px;
+  }

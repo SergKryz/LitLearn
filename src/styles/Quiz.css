@@ -1,0 +1,22 @@
+
+
+
+  
+  
+  .back-button {
+    position: fixed;  
+    top: 80px;  
+    left:20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgb(240, 45, 45);
+    color: black;
+    font-size: 30px;
+    line-height: 50px;
+    text-align: center;
+    cursor: hand;
+    z-index: 100;
+  }
+  
+ 
