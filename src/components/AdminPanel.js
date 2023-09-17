@@ -42,7 +42,12 @@ export default function AdminPanel() {
       const newLessonKey = `lesson${nextIndex}`;
       database.ref(`learningLevels/beginner/lessons/${newLessonKey}`).set({
         lessonName: newLesson,
-        words: {},
+        words: {
+          word1: {
+            word: "test",
+            translation: "test",
+          },
+        },
       });
       setNewLesson("");
     }
