@@ -9,6 +9,8 @@ export default function AdminPanel() {
   const [selectedLesson, setSelectedLesson] = useState(null);
   const [newWord, setNewWord] = useState("");
   const [newTranslation, setNewTranslation] = useState("");
+  const [newExample, setNewExample] = useState("");
+  const [newExTrans, setNewExTrans] = useState("");
   const [selectedWord, setSelectedWord] = useState(null);
 
   useEffect(() => {
@@ -44,8 +46,10 @@ export default function AdminPanel() {
         lessonName: newLesson,
         words: {
           word1: {
-            word: "test",
-            translation: "test",
+            word: "Add words here",
+            translation: "Add translations here",
+            example: "Add examples here",
+            exTrans: "Add example translations here",
           },
         },
       });
@@ -85,11 +89,15 @@ export default function AdminPanel() {
       .set({
         word: newWord,
         translation: newTranslation,
+        example: newExample,
+        exTrans: newExTrans,
       })
       .then(() => {
         // Reset the input fields
         setNewWord("");
         setNewTranslation("");
+        setNewExample("");
+        setNewExTrans("");
       })
       .catch((error) => {
         console.error("Error adding word:", error);
@@ -102,12 +110,21 @@ export default function AdminPanel() {
       .remove();
   };
 
-  const editWordInLesson = (lessonKey, wordKey, newWord, newTranslation) => {
+  const editWordInLesson = (
+    lessonKey,
+    wordKey,
+    newWord,
+    newTranslation,
+    newExample,
+    newExTrans
+  ) => {
     database
       .ref(`learningLevels/beginner/lessons/${lessonKey}/words/${wordKey}`)
       .set({
         word: newWord,
         translation: newTranslation,
+        example: newExample,
+        exTrans: newExTrans,
       });
   };
 
@@ -174,6 +191,19 @@ export default function AdminPanel() {
               value={newTranslation}
               onChange={(e) => setNewTranslation(e.target.value)}
             />
+            <input
+              type="text"
+              placeholder="Example"
+              value={newExample}
+              onChange={(e) => setNewExample(e.target.value)}
+            />
+            <input
+              type="text"
+              placeholder="Example Translation"
+              value={newExTrans}
+              onChange={(e) => setNewExTrans(e.target.value)}
+            />
+
             <button onClick={() => addWordToLesson(selectedLesson)}>
               Add New Word
             </button>
@@ -186,6 +216,8 @@ export default function AdminPanel() {
                     <li className="word-list-item" key={wordKey}>
                       {lessons[selectedLesson].words[wordKey].word} -{" "}
                       {lessons[selectedLesson].words[wordKey].translation}
+                      {lessons[selectedLesson].words[wordKey].example}
+                      {lessons[selectedLesson].words[wordKey].exTrans}
                       <button onClick={() => setSelectedWord(wordKey)}>
                         Edit
                       </button>
@@ -213,6 +245,22 @@ export default function AdminPanel() {
                               lessons[selectedLesson].words[wordKey].translation
                             }
                             onChange={(e) => setNewTranslation(e.target.value)}
+                          />
+                          <input
+                            type="text"
+                            placeholder="Edit example"
+                            defaultValue={
+                              lessons[selectedLesson].words[wordKey].example
+                            }
+                            onChange={(e) => setNewExample(e.target.value)}
+                          />
+                          <input
+                            type="text"
+                            placeholder="Edit example translation"
+                            defaultValue={
+                              lessons[selectedLesson].words[wordKey].exTrans
+                            }
+                            onChange={(e) => setNewExTrans(e.target.value)}
                           />
                           <button
                             onClick={() =>
