@@ -48,63 +48,68 @@ const LessonCards = () => {
   console.log("All cards flipped:", allCardsFlipped);
 
   return (
-    <div className="lesson-cards-container">
-      {selectedLesson ? (
-        <>
-          <button
-            className="back-button"
-            onClick={() => setSelectedLesson(null)}
-          >
-            &larr;
-          </button>
-          {Object.keys(selectedLesson.words).map((wordKey, index) => (
-            <div
-              className="lesson-card"
-              key={wordKey}
-              onClick={() => handleFlip(index)}
+    <div className="main-container">
+      <h1 className="title title-white">Lessons</h1>
+      <div className="lesson-cards-container">
+        {selectedLesson ? (
+          <>
+            <button
+              className="back-button"
+              onClick={() => setSelectedLesson(null)}
             >
-              <div className={`card-inner ${flipped[index] ? "flipped" : ""}`}>
-                <div className="card-front">
-                  <h1>{selectedLesson.words[wordKey].word}</h1>
-                </div>
-                <div className="card-back">
-                  <p className="translation">
-                    {selectedLesson.words[wordKey].translation}
-                  </p>
-                  <div className="divider"></div>
-                  <p className="example">
-                    {selectedLesson.words[wordKey].example}
-                  </p>
-                  <div className="divider"></div>
-                  <p className="exTrans">
-                    {selectedLesson.words[wordKey].exTrans}
-                  </p>
+              &larr;
+            </button>
+            {Object.keys(selectedLesson.words).map((wordKey, index) => (
+              <div
+                className="lesson-card"
+                key={wordKey}
+                onClick={() => handleFlip(index)}
+              >
+                <div
+                  className={`card-inner ${flipped[index] ? "flipped" : ""}`}
+                >
+                  <div className="card-front">
+                    <h1>{selectedLesson.words[wordKey].word}</h1>
+                  </div>
+                  <div className="card-back">
+                    <p className="translation">
+                      {selectedLesson.words[wordKey].translation}
+                    </p>
+                    <div className="divider"></div>
+                    <p className="example">
+                      {selectedLesson.words[wordKey].example}
+                    </p>
+                    <div className="divider"></div>
+                    <p className="exTrans">
+                      {selectedLesson.words[wordKey].exTrans}
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
 
-          {allCardsFlipped && (
-            <button className="quiz-btn" onClick={() => navigate("/quiz")}>
-              Go to Quiz
-            </button>
-          )}
-        </>
-      ) : lessons ? (
-        Object.keys(lessons).map((lessonKey, index) => (
-          <div
-            className="lesson-card"
-            key={lessonKey}
-            onClick={() => selectLesson(lessonKey)}
-          >
-            <div className="card-front">
-              <h3>{lessons[lessonKey].lessonName}</h3>
+            {allCardsFlipped && (
+              <button className="quiz-btn" onClick={() => navigate("/quiz")}>
+                Go to Quiz
+              </button>
+            )}
+          </>
+        ) : lessons ? (
+          Object.keys(lessons).map((lessonKey, index) => (
+            <div
+              className="lesson-card"
+              key={lessonKey}
+              onClick={() => selectLesson(lessonKey)}
+            >
+              <div className="card-front">
+                <h3>{lessons[lessonKey].lessonName}</h3>
+              </div>
             </div>
-          </div>
-        ))
-      ) : (
-        <p className="loading">KRAUNASI</p>
-      )}
+          ))
+        ) : (
+          <p className="loading">Loading...Please wait...</p>
+        )}
+      </div>
     </div>
   );
 };

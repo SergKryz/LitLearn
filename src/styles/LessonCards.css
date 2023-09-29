@@ -1,3 +1,14 @@
+.title-white {
+  color: rgb(221, 225, 194);
+  text-align: center;
+  margin-left: 50%;
+  margin-top: 2rem;
+  background-color: rgb(191, 191, 146);
+  padding: 10px 20px; 
+  border-radius: 12px;
+  display: inline-block; 
+  
+}
 .lesson-cards-container {
     display: flex;
     flex-wrap: wrap;
@@ -131,3 +142,5 @@
     display: block;  
     margin: 80px auto 0 auto;  
   }
+
+  

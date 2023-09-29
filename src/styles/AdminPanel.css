@@ -8,8 +8,9 @@
     color: rgb(251, 251, 251);
     background-color: aliceblue;
     display: flex; 
-    justify-content: center; 
+    justify-content: space-between; 
     text-align: center;
+    align-items: center;
     margin-top: 20px;
     margin-bottom: 20px;
     padding: 10px;  
@@ -98,4 +99,23 @@
   
   .word-list-item button {
     padding: 5px 10px;
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+ 
+  .edit-btn {
+    margin-right: 10px;  
+  }
+
+  .logout-btn {
+   margin-left: 93%;
+  margin-top: 10 px;
+  background-color:rgb(237, 143, 84);
+  border-radius: 15px;
+  padding:10px;
+
   }

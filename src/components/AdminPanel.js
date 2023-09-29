@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { database } from "../firebase";
-import TopNav from "./TopNav";
 import "../styles/AdminPanel.css";
+import { auth } from "../firebase";
+import { Navigate } from "react-router-dom";
 
 export default function AdminPanel() {
   const [lessons, setLessons] = useState({});
@@ -21,6 +22,15 @@ export default function AdminPanel() {
       setLessons(data || {});
     });
   }, []);
+
+  const handleLogout = async () => {
+    try {
+      await auth.signOut();
+      <Navigate to="/login" />;
+    } catch (error) {
+      console.error("Error logging out:", error);
+    }
+  };
 
   // Function to find the next available index for a new lesson
   const findNextAvailableIndex = () => {
@@ -130,10 +140,12 @@ export default function AdminPanel() {
 
   return (
     <div>
-      <TopNav />
       <div className="admin-container">
         <div className="admin-title-container">
           <h1>Admin Page</h1>
+          <button className=" logout-btn" onClick={handleLogout}>
+            Logout
+          </button>
         </div>
         <div className="admin-card">
           <input
@@ -215,19 +227,24 @@ export default function AdminPanel() {
                   Object.keys(lessons[selectedLesson].words).map((wordKey) => (
                     <li className="word-list-item" key={wordKey}>
                       {lessons[selectedLesson].words[wordKey].word} -{" "}
-                      {lessons[selectedLesson].words[wordKey].translation}
-                      {lessons[selectedLesson].words[wordKey].example}
+                      {lessons[selectedLesson].words[wordKey].translation} -{" "}
+                      {lessons[selectedLesson].words[wordKey].example} -{" "}
                       {lessons[selectedLesson].words[wordKey].exTrans}
-                      <button onClick={() => setSelectedWord(wordKey)}>
-                        Edit
-                      </button>
-                      <button
-                        onClick={() =>
-                          deleteWordFromLesson(selectedLesson, wordKey)
-                        }
-                      >
-                        Delete
-                      </button>
+                      <div className="buton-container">
+                        <button
+                          onClick={() => setSelectedWord(wordKey)}
+                          className="edit-btn"
+                        >
+                          Edit
+                        </button>
+                        <button
+                          onClick={() =>
+                            deleteWordFromLesson(selectedLesson, wordKey)
+                          }
+                        >
+                          Delete
+                        </button>
+                      </div>
                       {selectedWord === wordKey && (
                         <div>
                           <input
@@ -268,7 +285,9 @@ export default function AdminPanel() {
                                 selectedLesson,
                                 wordKey,
                                 newWord,
-                                newTranslation
+                                newTranslation,
+                                newExample,
+                                newExTrans
                               )
                             }
                           >
