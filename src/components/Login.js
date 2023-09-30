@@ -24,7 +24,7 @@ export default function Login() {
       await login(emailRef.current.value, passwordRef.current.value);
 
       //if email is admins , redirect to admin page
-      if (emailRef.current.value === "admin@admin.com") {
+      if (emailRef.current.value === "admin@admin.com" || emailRef.current.value === "test@test.com") {
         navigate("/admin");
       } else {
         navigate("/");
