@@ -9,8 +9,9 @@ Steps for testing application (for academic use only):
 
 6. Install latest Firebase SDK  - npm install firebase
 7. create .env.local file with the following firebase configuration structure:
-8. 
-    REACT_APP_FIREBASE_API_KEY= 
+
+
+    REACT_APP_FIREBASE_API_KEY= \
     REACT_APP_FIREBASE_AUTH_DOMAIN=
     REACT_APP_FIREBASE_PROJECT_ID=
     REACT_APP_FIREBASE_STORAGE_BUCKET=
