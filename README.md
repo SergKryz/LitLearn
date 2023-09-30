@@ -19,7 +19,7 @@ Steps for testing application (for academic use only):
 
 6. Run application - *npm start*
 7. Create a account to access app ( Please note, that temporarily social acoount access has been disabled)
-8. to access admin dashboard create account with  email admin@admin.com (implemented just for atesting purposes)
+8. to access admin dashboard create account with  email test@test.com (implemented just for atesting purposes)
 
    Happy testing !
            
