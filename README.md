@@ -18,6 +18,10 @@ Steps for testing application (for academic use only):
     REACT_APP_FIREBASE_APP_ID=\
 
 6. Run application - *npm start*
+7. Create a account to access app ( Please note, that temporarily social acoount access has been disabled)
+8. to access admin dashboard create account with  email admin@admin.com (implemented just for atesting purposes)
+
+   Happy testing !
            
 
 
