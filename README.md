@@ -1,14 +1,13 @@
 # Getting Started 
 Steps for testing application (for academic use only):
 
-!Assuming you are have node.js and npm installed
+! Assuming you are have node.js and npm installed !
 
-1. Clone repository to your VS code
-2. Install all required packages - npm i
-4. Create Firebase DB (credentials to my DB access are at the end of my research paper, Appendix I )
-
-6. Install latest Firebase SDK  - npm install firebase
-7. create .env.local file with the following firebase configuration structure:
+1. Create Firebase DB at (https://firebase.google.com/) or you can use my credentials to make application setup (credentials can be found at the back of Dissertation paper, Appendix)
+2. Clone repository to your VS code
+3. Install all required packages - *npm install*
+4. Install latest Firebase SDK  - *npm install firebase*
+5. Add *.env.local* file with the  main folder structure of application and setup firebase configuration as follows:
 
 
     REACT_APP_FIREBASE_API_KEY= \
@@ -17,6 +16,8 @@ Steps for testing application (for academic use only):
     REACT_APP_FIREBASE_STORAGE_BUCKET=\
     REACT_APP_FIREBASE_MESSAGING_SENDER_ID=\
     REACT_APP_FIREBASE_APP_ID=\
+
+6. Run application - *npm start*
            
 
 
