@@ -1,3 +1,10 @@
+.topanv, .topnav *{
+  box-sizing: border-box;
+}
+body, html {
+  margin: 0;
+  padding: 0;
+}
 .topnav {
     display: flex;
     justify-content: space-between;          
@@ -5,7 +12,9 @@
     background-color: rgba(108, 202, 70, 0.8);  
     padding:0;
     margin:0;
-    width: 100%;
+    top:0;
+    left:0;
+    width: 100vw;
   }
   
   .nav-links {
@@ -39,7 +48,7 @@
     background-color: white;
     border: 1px solid #ccc;
     border-radius: 5px;
-    z-index: 100;
+    z-index: 1000;
     color:black;
   }
   
@@ -76,3 +85,28 @@
     padding: 10px 20px;  
   }
   
+  @media (max-width: 768px) {
+    .topnav {
+      flex-direction: column;
+    }
+  
+    .nav-links {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .nav-links a {
+      font-size: 1em;
+      padding: 5px;
+    }
+  
+    .user-dropdown {
+      position: relative; /* Changing from absolute to relative to avoid overlap on mobile */
+    }
+    
+    .user-info img {
+      width: 25px;
+      height: 25px;
+    }
+  
+  }

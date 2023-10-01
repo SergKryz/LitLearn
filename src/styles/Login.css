@@ -132,3 +132,10 @@ body {
     color: rgb(243, 241, 241);
     margin-bottom: 20px;  
 }
+
+@media (max-width: 768px) {
+.login-card {
+  width: 90%; 
+  padding: 1em;
+}
+}

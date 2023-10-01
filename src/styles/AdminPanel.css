@@ -119,3 +119,29 @@
   padding:10px;
 
   }
+
+  @media (max-width: 768px) {
+
+   
+  
+    .admin-container,
+    .admin-card,
+    .edit-lesson-section,
+    .word-list-section {
+      margin: 10px;
+      padding: 10px;
+    }
+    
+    .admin-title-container h1 {
+      flex-direction: column;
+    }
+  
+    .admin-button, 
+    .word-list-item button {
+      padding: 5px 10px;
+    }
+    
+    .logout-btn {
+      margin-left: 80%; 
+    }
+  }
