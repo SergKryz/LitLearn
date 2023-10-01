@@ -1,5 +1,35 @@
 
+.quiz-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+  justify-content: flex-start;  
+  min-height: 100vh;
+  position: relative;
+}
+.quiz-title {
+  
+  display: flex;
+  justify-content: center;
+  color: antiquewhite;
+  margin-top: 1em;
+  width: 100%;
+  font-size: 2em;
+  margin-bottom: 1em;
+}
+.quiz-icontent{
+  color: rgb(221, 237, 43);
+  font-size: 35px;
+  background-color: black;
+  width: fit-content;
+  margin:3em 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5em 1em;
+  
 
+}
 
   
   

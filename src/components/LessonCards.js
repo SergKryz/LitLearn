@@ -49,7 +49,7 @@ const LessonCards = () => {
 
   return (
     <div className="main-container">
-      <h1 className="title title-white">Lessons</h1>
+      <h1 className="lesson-title">Lessons</h1>
       <div className="lesson-cards-container">
         {selectedLesson ? (
           <>

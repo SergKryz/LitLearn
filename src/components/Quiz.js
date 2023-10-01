@@ -18,8 +18,11 @@ const Quiz = () => {
             &larr;
           </button>
         </div>
-        <div className="quiz-content">
+        <div className="quiz-title">
           <h1>Welcome to the Quiz!</h1>
+        </div>
+        <div className="quiz-icontent">
+          <p>This section is till under development... Appologies</p>
         </div>
       </div>
     </div>
