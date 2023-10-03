@@ -4,15 +4,13 @@
 
 
 body {
-    margin: 0;
-    padding: none;
-    background-image: url('../assets/background/Senamiestis.jpg');
-    background-position: center;
-    background-size:cover;
-    background-repeat:calc(100vh - 100vh);
 
+    background: url('../assets/background/Senamiestis.jpg') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
     
-   
   }
   div {
     margin: 0;

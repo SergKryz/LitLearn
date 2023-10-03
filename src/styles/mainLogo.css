@@ -56,7 +56,7 @@
     .main-logo {
       width: 100%;
       text-align: center;
-      margin: 100px auto 0 auto ;
+      margin: 100px auto 10px auto ;
     }
     .main-logo .overlap-group {
       height: 114px;
@@ -80,7 +80,7 @@
       border-color: #ffffff;
       height: 102px;
       left: 0;
-      position: absolute;
+      position: center;
       top: 9px;
       width: 376px;
     }
@@ -107,3 +107,5 @@
       font-weight: 200;
     }
   }
+
+  
